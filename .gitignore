@@ -1,0 +1,24 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# Flask
+instance/
+
+# Testing
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
