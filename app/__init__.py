@@ -2,6 +2,7 @@ from flask import Flask
 
 from app.config import Config
 from app.extensions import db,migrate
+from app.products.models import Product
 
 def create_app():
     app = Flask(__name__)

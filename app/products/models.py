@@ -6,7 +6,8 @@ class Product(db.Model):
 
     product_id = db.Column(
         db.Integer,
-        primary_key = True
+        primary_key = True,
+        autoincrement = True
     )
 
     name =db.Column(
@@ -26,13 +27,14 @@ class Product(db.Model):
 
     reserved_stock = db.Column(
         db.Integer,
+        nullable=False,
         default=0
     )
 
     created_at = db.Column(
         db.DateTime,
-        served_default = db.func.now()
+        server_default = db.func.now()
     )
 
     def __repr__(self):
-        return f"<Product {self.name}>"
+        return f"<Product {self.product_id}: {self.name}>"
