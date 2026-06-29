@@ -38,3 +38,8 @@ class Product(db.Model):
 
     def __repr__(self):
         return f"<Product {self.product_id}: {self.name}>"
+
+    order_items = db.relationship(
+        "OrderItem",
+        back_populates="product"
+    )
