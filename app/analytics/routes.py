@@ -28,3 +28,23 @@ def admin_dashboard():
         "dashboard.html",
         dashboard=data
     )
+
+@analytics_bp.get("/analytics/orders-chart")
+def orders_chart():
+
+    data = AnalyticsService.orders_chart()
+
+    return success_response(
+        data,
+        "Orders chart loaded successfully"
+    )
+
+@analytics_bp.get("/analytics/low-stock")
+def low_stock():
+
+    alerts = AnalyticsService.low_stock_alerts()
+
+    return success_response(
+        alerts,
+        "Low stock alerts loaded successfully"
+    )

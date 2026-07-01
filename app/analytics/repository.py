@@ -35,3 +35,29 @@ class AnalyticsRepository:
             .limit(limit)
             .all()
         )
+    
+    @staticmethod
+    def orders_per_day():
+
+        results = (
+            db.session.query(
+                func.date(Order.created_at),
+                func.count(Order.order_id)
+            )
+            .group_by(func.date(Order.created_at))
+            .order_by(func.date(Order.created_at))
+            .all()
+        )
+
+        return results
+
+    @staticmethod
+    def low_stock_products(limit=10):
+
+        return (
+            Product.query
+            .filter(Product.stock <= 20)
+            .order_by(Product.stock.asc())
+            .limit(limit)
+            .all()
+        )
