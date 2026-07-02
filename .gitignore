@@ -1,12 +1,16 @@
 # Virtual Environment
 venv/
 
+
 # Environment Variables
 .env
 
 # Python Cache
 __pycache__/
 *.py[cod]
+*.pyc
+*.db
+.idea/
 
 # VS Code
 .vscode/
@@ -22,3 +26,5 @@ instance/
 
 # Windows
 Thumbs.db
+
+model.pkl

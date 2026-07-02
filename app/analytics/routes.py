@@ -48,3 +48,13 @@ def low_stock():
         alerts,
         "Low stock alerts loaded successfully"
     )
+
+@analytics_bp.get("/analytics/predict")
+def predict():
+
+    data = AnalyticsService.demand_prediction()
+
+    return success_response(
+        data,
+        "Prediction loaded successfully."
+    )

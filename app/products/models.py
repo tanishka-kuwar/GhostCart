@@ -15,6 +15,22 @@ class Product(db.Model):
         nullable = False
     )
 
+    brand = db.Column(
+        db.String(100),
+        nullable=False
+    )
+
+    category = db.Column(
+        db.String(100),
+        nullable=False
+    )
+
+    sku = db.Column(
+        db.String(100),
+        unique=True,
+        nullable=False
+    )
+
     price = db.Column(
         db.Numeric(10,2),
         nullable = False

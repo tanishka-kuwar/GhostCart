@@ -1,4 +1,5 @@
 from app.analytics.repository import AnalyticsRepository
+from app.ml.predictor import DemandPredictor
 
 class AnalyticsService:
 
@@ -34,7 +35,8 @@ class AnalyticsService:
                                 )
 
             } for order in orders],
-            "alerts": AnalyticsService.low_stock_alerts()
+            "alerts": AnalyticsService.low_stock_alerts(),
+            "predictions": AnalyticsService.demand_prediction()[:5]
         }
     
     @staticmethod
@@ -90,3 +92,8 @@ class AnalyticsService:
             })
 
         return alerts
+
+    @staticmethod
+    def demand_prediction():
+
+        return DemandPredictor.predict_all()
