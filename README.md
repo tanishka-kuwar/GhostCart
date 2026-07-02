@@ -105,22 +105,24 @@ GhostCart
 
 ## 📸 Screenshots
 
-### Dashboard
+## Sidebar
+![Sidebar](docs/Sidebar.png)
 
-> Add image here
+## 📸 Dashboard
 
-### Inventory
+![Dashboard](docs/Dashboard.png)
 
-> Add image here
+## 📦 Orders
 
-### Analytics
+![Inventory](docs/Order.png)
 
-> Add image here
+## 📈 Analytics
 
-### AI Forecast
+![Analytics](docs/Analytics.png)
 
-> Add image here
+## 🤖 AI Forecast
 
+![AI Forecast](docs/Ai.png)
 ---
 
 ## 🚀 Installation
@@ -249,6 +251,32 @@ Dashboard
 ```
 
 ---
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+
+A[Browser] --> B[Flask Routes]
+
+B --> C[Service Layer]
+
+C --> D[Repository Layer]
+
+D --> E[SQLAlchemy ORM]
+
+E --> F[(MySQL Database)]
+
+F --> G[Machine Learning]
+
+G --> H[Pandas]
+
+H --> I[Random Forest Model]
+
+I --> J[Prediction API]
+
+J --> K[Dashboard]
+```
+
 
 ## 📈 Future Improvements
 
